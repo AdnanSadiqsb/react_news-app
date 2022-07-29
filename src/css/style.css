@@ -49,7 +49,7 @@
     font-size: 1rem;
     box-sizing: border-box;
     color: #2196f3;
-    transform: translateX(100%);
+    transform: translateY(100%);
     opacity: 0;
     transition: all 0.4s ease-in;
 
@@ -67,7 +67,7 @@
     color: white;
     padding: 0.1rem 0.5rem;
     border-bottom-left-radius: 10px;
-    transform: translateX(100%);
+    transform: translateY(100%);
     opacity: 0;
     transition: all 0.4s ease-in;
 }

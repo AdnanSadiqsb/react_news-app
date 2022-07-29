@@ -5,7 +5,7 @@ import '../css/style.css'
 import newsImg from '../images/newsimg.jpg'
 import Spiner from './Spiner';
 import Error from './Error'
-import InfiniteScroll from 'react-infinite-scroll-component';
+// import InfiniteScroll from 'react-infinite-scroll-component';
 export class News extends Component {
     static defaultProps={
         category:'top',
@@ -47,7 +47,9 @@ export class News extends Component {
       }
     async updateData(pageNo)
     {
-        let url=`https://newsdata.io/api/1/news?apikey=pub_9628988648c41baa85577f0d420f3461ca56&page=${pageNo}&category=${this.props.category}`;
+        this.props.setProgress(10)
+
+        let url=`https://newsdata.io/api/1/news?apikey=${this.props.apiKey}&page=${pageNo}&category=${this.props.category}`;
 
         this.setState({
             loading:true
@@ -69,14 +71,14 @@ export class News extends Component {
             
            
         }
-        console.log(this.state.totalResults)
-        console.log(this.state.articles.length)
+        this.props.setProgress(100)
+
 
     }
     async componentDidMount()
     {
-
         this.updateData(1)
+        
     }
     handleNextClick = async()=>
     {
