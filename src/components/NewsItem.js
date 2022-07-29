@@ -1,15 +1,12 @@
-import React, { Component } from 'react'
-import PropTypes from 'prop-types'
+import React from 'react'
 
 import '../css/style.css'
 
-export class NewsItem extends Component {
-    static defaultProp={
-        imgurl:'https://www.istockphoto.com/photos/breaking-news'
-    }
+const NewsItem= (props)=> {
+    
  
-  render() {
-      let {title,description,imgurl,uniqeUrl,pubDate,source_id}=this.props;
+ 
+      let {title,description,imgurl,uniqeUrl,pubDate,source_id}=props;
     return (
         <>
         <div className="card" style={{width: '18rem' ,alignItems:'center'}}>
@@ -25,7 +22,9 @@ export class NewsItem extends Component {
         </div>
         </>
     )
-  }
+  
 }
-
+NewsItem.defaultProp={
+    imgurl:'https://www.istockphoto.com/photos/breaking-news'
+}
 export default NewsItem

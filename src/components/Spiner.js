@@ -1,8 +1,8 @@
 import React, { Component } from 'react'
 import imgPath from '../images/loading.gif' 
 import '../css/style.css'
-export default class Spiner extends Component {
-  render() {
+const Spiner=()=> {
+  
     return (
       <div>
           <div className="loading-cont">
@@ -10,5 +10,6 @@ export default class Spiner extends Component {
             </div>
       </div>
     )
-  }
+  
 }
+export default Spiner
